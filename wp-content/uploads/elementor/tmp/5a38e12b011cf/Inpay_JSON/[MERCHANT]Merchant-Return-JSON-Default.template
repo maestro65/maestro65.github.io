@@ -1,0 +1,27 @@
+<html>
+	<head>
+		<title>{title}</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<script type="text/javascript" src="/Templates/jquery.11.min.js"></script>
+		<script type="text/javascript" src="/Templates/jquery.migrate.min.js"></script>
+		<script type="text/javascript" src="/Templates/payture.min.v1.0.js"></script>
+		<link rel="stylesheet" href="/Templates/Payture_2.0/style.css"/>
+
+		<script type="text/javascript">
+			$(document).ready(function () {
+				/**
+				 * Get response after 3DS authorizing
+				 */
+				console.log(Payture.getJSONResponse())
+			})
+		</script>
+	</head>
+	<body>
+		<div class="header">
+			<div id="logoPayture" class="container"></div>
+		</div>
+		<div class="container return">
+			<span class="response_json">{response_json}</span>
+		</div>
+	</body>
+</html>

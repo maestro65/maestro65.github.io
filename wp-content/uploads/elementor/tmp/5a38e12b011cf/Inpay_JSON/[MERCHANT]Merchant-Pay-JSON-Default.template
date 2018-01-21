@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<title>Payture.com - Merchant</title>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="ROBOTS" content="NONE">
+
+	<script type="text/javascript" src="/Templates/jquery.11.min.js"></script>
+	<script type="text/javascript" src="/Templates/jquery.migrate.min.js"></script>
+	<script type="text/javascript" src="/Templates/device.min.js"></script>
+	<script type="text/javascript" src="/Templates/payture.min.v1.0.js"></script>
+	<link rel="stylesheet" href="/Templates/Payture_2.0/style.css"/>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			Payture.InPay({
+				Type : "JSON"
+			});
+		})
+	</script>
+</head>
+<body>
+	<div class="header">
+		<div id="logoPayture" class="container"></div>
+	</div>
+	<div class="container section" id="paymentCard">
+		<h2>Покупка {product} на сумму {total} руб.</h2>
+		<span class="response_json">{response_json}</span>
+		<div id="errorTop">{error}</div>
+		<form name="payForm" id="payForm">
+			<input name="Key" value="{key}" type="hidden">
+				
+			<div class="card">
+				<div class="CardType clearfix"></div>
+				<div class="CardNumber form_row clearfix">
+					<div class="error"></div>
+					<div class="NumberContainer">
+						<input name="CardNumber0" maxlength="4" type="text" class="onlyNum" autocomplete="off" next="CardNumber1">
+						<input name="CardNumber1" maxlength="4" type="text" class="onlyNum" autocomplete="off" next="CardNumber2" prev="CardNumber0">
+						<input name="CardNumber2" maxlength="4" type="text" class="onlyNum" autocomplete="off" next="CardNumber3" prev="CardNumber1">
+						<input name="CardNumber3" maxlength="7" type="text" class="onlyNum" autocomplete="off" prev="CardNumber2">
+					</div>
+				</div>
+			   
+				<div class="ExpiredDate form_row clearfix"> 
+					<div class="error"></div>
+					<span class="month label">Месяц</span>
+					<span class="label">Год</span>    
+					<span class="valid label">Действительна<br />до</span>
+					<input class="text onlyNum" name="EMonth" maxlength="2" value="" type="text" autocomplete="off" next="EYear">
+					<span class="separator">/</span>
+					<input class="text onlyNum" name="EYear" maxlength="2" value="" type="text" autocomplete="off" prev="EMonth" next="CardHolder">
+				</div>
+
+				<div class="CardHolder form_row clearfix">
+					<div class="error"></div>
+					<input class="text onlyLat" name="CardHolder" maxlength="42" value="" placeholder="Cardholder" type="text" autocomplete="off">
+				</div>
+
+				<div class="CVV form_row clearfix">
+					<div class="error"></div>
+					<span class="label">CVV/CVC</span>
+					<span class="numbers">1234</span>
+					<input name="SecureCode" maxlength="3" value="" type="text" class="text onlyNum" autocomplete="off">
+					<div class="clear"></div>
+					<span class="label info">Последние три цифры на&nbsp;обратной стороне</span>
+				</div>
+			</div>
+
+			<div class="payBlock">
+				<button>Оплатить</button>    
+			</div>
+		</form>
+	</div>
+	<div id="result" class="container section">
+		<h3></h3>
+		<p class="message"></p>
+		<p>Через несколько секунд вы&nbsp;будете перемещены на&nbsp;страницу магазина или&nbsp;нажмите <a href=''>сюда</a> чтобы перейти без&nbsp;ожидания</p>
+	</div>
+</body>
+</html>

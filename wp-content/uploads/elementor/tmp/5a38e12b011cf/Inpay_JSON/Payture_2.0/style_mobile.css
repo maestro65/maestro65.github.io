@@ -1,0 +1,176 @@
+* {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #F1F2F3;
+}
+.container {
+	padding: 10px 10%;
+}
+.response_json {
+	display: none;
+}
+
+.header {
+	background: #0077A3;
+	margin-bottom: 30px;
+	min-height: 65px;
+	position: relative;
+}
+
+#logoPayture {
+	background: url(images/paytureLogo.png) no-repeat right;
+	height: 33px;
+	position: absolute;
+	top: 10px;
+	right: 10%;
+	width: 76px;
+}
+
+h2 {
+	color: #FFFFFF;
+	font-size: 18px;
+	margin-bottom: 15px;
+	width: 65%;
+}
+a { color: #0077A3; }
+a:hover { text-decoration: none; }
+
+.card {
+	margin: auto;
+	padding: 25px 0; 
+	position: relative;
+}
+
+input{
+	background: #FFFFFF;
+	border: 1px solid #DDDDDD;
+	box-shadow: 0 1px 0 rgba(255,255,255,0.5);
+	-moz-box-sizing: border-box; /* Для Firefox */  
+    box-sizing: border-box; /* Ширина блока с полями */
+	display: inline-block;
+	font-size: 16px; 
+	line-height: 20px;
+	height: 30px;
+	padding: 0 3%;
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 10px;
+	width: 100%;
+}
+input:focus, button:focus { outline: none; }
+input:disabled { background: #FAFBFC; }
+
+.label{
+	color: #333;
+	display: inline-block;
+	font-size: 10px;
+	line-height: 12px;
+	text-transform: uppercase;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+
+.clear{
+	float: none;
+	clear: both;
+}
+
+/* --- Errors --- */
+.error {
+	display: none;
+	background: #d93975;
+	color: #FFFFFF;
+	font-size: 12px;
+	line-height: 16px;
+	padding: 3px 10px;
+	position: absolute;
+	top: -5px;
+	left: 0;
+	right: 0;
+	white-space: nowrap;
+}
+
+.wrong { color: #AF2E66; }
+
+#errorTop{
+	color: #AF2E66;
+	margin-bottom: 20px;
+}
+
+/* -- select card -- */
+.selectCard {
+	margin-bottom: 15px;
+	text-align:center;
+}
+
+.selectCard select {
+	font-size: 16px;
+	margin: 5px 0;
+}
+
+/* -- Card -- */
+#ExpiredDate input{ width: 48%; }
+#ExpiredDate input[name=EYear]{ float: right; }
+#CardHolder input{ text-align: left; }
+
+/* -- Add Card -- */
+#addCard {
+	color: #505050;
+	display: block;
+	font-size: 15px;
+	line-height: 25px;
+	text-shadow: 0 1px 0 #FFFFFF;
+}
+#addCard input{
+	height: auto;
+	margin: 3px 5px;
+	width: auto;
+}
+
+/* --- Pay Button --- */
+.payBlock {
+	margin-bottom: 30px;
+	text-align: center;
+}
+button{
+	background: #00AEEF;
+	border: none;
+	border-radius: 2px;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.3);
+	color: #FFFFFF;
+	cursor: pointer;
+	font-size: 16px;
+	position: relative;
+	padding: 5px 15px;
+	text-shadow: 0 1px 1px rgba(0,0,0,0.4);
+	width: 110px;
+}
+button:hover { background: #00BFF6; }
+button.disable,
+button:disabled {
+	background: #D0D0D0;
+	cursor: default;
+}
+button.loading {
+	background: #00AEEF url(images/button_loader.gif) center no-repeat;
+	text-indent: -9999px
+}
+
+/* -- Return template -- */
+.return h3 {
+	color: #505050;
+	font-size: 16px;
+	margin-bottom: 20px;
+}
+
+.return p {
+	color: #666666;
+	font-size: 14px;
+	line-height: 21px;
+}
+.return a {
+	color: #0077A3;
+}
